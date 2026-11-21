@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sua capa estilo GTA VI | Gerador de prompt</title>
+<meta name="description" content="Copie o prompt, anexe sua foto na IA e gere sua capa estilo GTA VI em Vice City. Grátis e sem cadastro.">
+<meta name="theme-color" content="#0c0513">
+<meta property="og:title" content="Sua capa estilo GTA VI">
+<meta property="og:description" content="Copie o prompt, anexe sua foto e gere sua capa em Vice City.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0513;
+    --panel: rgba(255,255,255,.045);
+    --panel-strong: rgba(255,255,255,.07);
+    --line: rgba(255,255,255,.11);
+    --text: #f6eefc;
+    --muted: #a898b8;
+    --pink: #ff3d9a;
+    --orange: #ffa14a;
+    --violet: #8b5cff;
+    --sunset: linear-gradient(100deg, #8b5cff 0%, #ff3d9a 55%, #ffa14a 100%);
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    background:
+      radial-gradient(900px 520px at 50% -8%, rgba(139,92,255,.30), transparent 70%),
+      radial-gradient(700px 420px at 105% 8%, rgba(255,61,154,.16), transparent 70%),
+      radial-gradient(800px 500px at 50% 112%, rgba(255,161,74,.13), transparent 70%),
+      var(--bg);
+    background-repeat: no-repeat;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 22px; }
+
+  /* Topo */
+  .top { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; letter-spacing: -.01em; }
+  .sun { width: 22px; height: 22px; border-radius: 50%; background: var(--sunset); box-shadow: 0 0 18px rgba(255,61,154,.6); }
+  .top a { color: var(--muted); font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .top a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; animation: enter .8s ease-out both; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 10.5vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -.035em;
+    margin: 0 0 20px;
+  }
+  .hero p { font-size: 1.1rem; color: var(--muted); max-width: 30em; margin: 0 0 30px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font: inherit; font-weight: 700; font-size: 1rem;
+    border: 0; border-radius: 14px; padding: 16px 26px;
+    color: #fff; background: var(--sunset);
+    cursor: pointer; text-decoration: none;
+    box-shadow: 0 10px 34px -10px rgba(255,61,154,.7);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -10px rgba(255,61,154,.8); }
+  .btn:active { transform: translateY(0); }
+  .btn.ghost { background: var(--panel); border: 1px solid var(--line); box-shadow: none; color: var(--text); }
+  .btn.ghost:hover { background: var(--panel-strong); box-shadow: none; }
+  .btn:focus-visible, .seg button:focus-visible, summary:focus-visible, .link:focus-visible, .toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .assure { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; padding: 0; margin: 0; color: var(--muted); font-size: .92rem; }
+  .assure li::before { content: "✓"; color: var(--orange); font-weight: 800; margin-right: 7px; }
+
+  /* Secoes */
+  section { padding: 28px 0; }
+  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 5.5vw, 2rem); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 22px; }
+
+  /* Passos */
+  .steps { list-style: none; margin: 0; padding: 0; position: relative; }
+  .steps::before { content: ""; position: absolute; left: 17px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(var(--violet), var(--pink), var(--orange)); opacity: .5; }
+  .steps li { position: relative; padding: 0 0 22px 56px; }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps .n {
+    position: absolute; left: 0; top: 0; width: 35px; height: 35px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--display); font-weight: 700; font-size: .95rem;
+    background: var(--bg); border: 1px solid var(--line);
+  }
+  .steps strong { display: block; font-weight: 700; margin-bottom: 2px; }
+  .steps span { color: var(--muted); font-size: .96rem; }
+
+  /* Gerador */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 24px 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  label.lbl { display: block; font-weight: 700; margin-bottom: 8px; }
+  .field {
+    width: 100%; font: inherit; font-size: 1.05rem; color: var(--text);
+    background: rgba(0,0,0,.35); border: 1px solid var(--line); border-radius: 14px;
+    padding: 15px 16px;
+  }
+  .field::placeholder { color: #75658a; }
+  .field:focus { outline: none; border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255,61,154,.18); }
+  .hint { color: var(--muted); font-size: .88rem; margin: 8px 0 0; }
+
+  .formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 8px; margin-top: 8px; }
+  .fmt {
+    font: inherit; text-align: left; color: var(--text); cursor: pointer;
+    background: rgba(0,0,0,.35); border: 1px solid var(--line); border-radius: 14px;
+    padding: 12px 12px 11px; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .fmt:hover { background: var(--panel-strong); }
+  .fmt:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .fmt[aria-pressed="true"] { border-color: var(--pink); background: rgba(255,61,154,.1); box-shadow: 0 0 0 3px rgba(255,61,154,.16); }
+  .fmt .shape { height: 34px; display: flex; align-items: center; }
+  .fmt .shape i { display: block; border: 2px solid var(--muted); border-radius: 4px; }
+  .fmt[aria-pressed="true"] .shape i { border-color: var(--orange); }
+  .fmt b { font-weight: 700; font-size: .98rem; line-height: 1.1; }
+  .fmt small { color: var(--muted); font-size: .78rem; line-height: 1.25; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 22px 0 16px; padding: 4px; background: rgba(0,0,0,.35); border: 1px solid var(--line); border-radius: 14px; }
+  .seg button {
+    font: inherit; font-weight: 700; font-size: .93rem; color: var(--muted);
+    background: transparent; border: 0; border-radius: 10px; padding: 11px 8px; cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+  }
+  .seg button[aria-pressed="true"] { color: #fff; background: var(--panel-strong); box-shadow: inset 0 0 0 1px var(--line); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; min-height: 36px; }
+  .chip { font-size: .85rem; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: rgba(139,92,255,.16); border: 1px solid rgba(139,92,255,.35); }
+  .chip-note { color: var(--muted); font-size: .92rem; margin: 6px 0; }
+
+  .preview { position: relative; background: rgba(0,0,0,.4); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .preview pre {
+    margin: 0; padding: 16px; font-family: var(--body); font-size: .86rem; line-height: 1.6; color: #e5d6f3;
+    white-space: pre-wrap; word-break: break-word;
+    max-height: 150px; overflow: hidden; transition: max-height .35s ease;
+  }
+  .preview.open pre { max-height: 520px; overflow: auto; }
+  .preview::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 64px; pointer-events: none; background: linear-gradient(transparent, #120a1b); transition: opacity .2s ease; }
+  .preview.open::after { opacity: 0; }
+  .toggle { display: block; margin: 12px 0 0; padding: 4px 0; font: inherit; font-weight: 700; font-size: .92rem; color: var(--orange); background: none; border: 0; cursor: pointer; }
+
+  .actions { display: grid; gap: 10px; margin-top: 20px; }
+  .actions .btn { width: 100%; }
+  .toast { min-height: 1.5em; margin: 12px 0 0; text-align: center; font-weight: 700; color: var(--orange); }
+  .open-ai { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; margin-top: 6px; font-size: .92rem; color: var(--muted); }
+  .link { color: var(--text); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); text-underline-offset: 3px; }
+
+  /* Dicas */
+  details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+  details:first-of-type { border-top: 1px solid var(--line); }
+  summary { list-style: none; cursor: pointer; font-weight: 700; padding: 16px 28px 16px 0; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 2px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; font-weight: 500; color: var(--orange); transition: transform .2s ease; }
+  details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  details p { margin: 0 0 16px; color: var(--muted); }
+
+  /* Rodape */
+  footer { margin-top: 36px; padding: 34px 0 44px; border-top: 1px solid var(--line); }
+  .maker { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .avatar { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--sunset); font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: #fff; }
+  .maker strong { display: block; line-height: 1.25; }
+  .maker span { color: var(--muted); font-size: .92rem; }
+  .fine { color: #75658a; font-size: .8rem; margin: 18px 0 0; }
+
+  @keyframes enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (min-width: 640px) {
+    .wrap { padding: 0 32px; }
+    .panel { padding: 32px; }
+    .actions { grid-template-columns: 1fr auto; }
+    .actions .btn.ghost { width: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero { animation: none; }
+    .btn, .preview pre, summary::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand"><span class="sun" aria-hidden="true"></span>Capa GTA VI</div>
+    <a href="https://www.instagram.com/vagner_lauriuche" target="_blank" rel="noopener">@vagner_lauriuche</a>
+  </header>
+
+  <div class="hero">
+    <h1>Sua capa de GTA VI, em um minuto.</h1>
+    <p>Copie o prompt, anexe sua foto em uma IA de imagem e receba um pôster seu em Vice City.</p>
+    <div class="cta-row">
+      <a class="btn" href="#gerador">Gerar meu prompt</a>
+      <ul class="assure">
+        <li>Grátis</li>
+        <li>Sem cadastro</li>
+      </ul>
+    </div>
+  </div>
+
+  <section aria-labelledby="como">
+    <h2 id="como">Como funciona</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><strong>Escreva seu nome</strong><span>Ele vai na capa, em letra cursiva, abaixo do logo.</span></li>
+      <li><span class="n">2</span><strong>Copie o prompt</strong><span>Um toque no botão e o texto completo vai para a área de transferência.</span></li>
+      <li><span class="n">3</span><strong>Cole na sua IA com a foto</strong><span>Use ChatGPT, Gemini ou outra IA de imagem e anexe uma foto sua nítida.</span></li>
+    </ol>
+  </section>
+
+  <section id="gerador" aria-labelledby="gerar">
+    <h2 id="gerar">Seu prompt</h2>
+    <div class="panel">
+      <label class="lbl" for="nome">Seu nome ou apelido</label>
+      <input class="field" type="text" id="nome" placeholder="Ex.: João Silva" maxlength="40" autocomplete="off">
+      <p class="hint">Aparece na capa, abaixo do logo GTA VI.</p>
+
+      <span class="lbl" id="fmt-lbl" style="display:block;margin:24px 0 0;font-weight:700">Formato da imagem</span>
+      <div class="formats" id="formats" role="group" aria-labelledby="fmt-lbl"></div>
+      <p class="hint" id="fmt-hint"></p>
+
+      <div class="seg" role="group" aria-label="Modo de sorteio">
+        <button type="button" id="modo-sorteio" aria-pressed="true">Pose sorteada</button>
+        <button type="button" id="modo-ia" aria-pressed="false">A IA sorteia</button>
+      </div>
+
+      <div class="chips" id="chips" aria-live="polite"></div>
+
+      <div class="preview" id="preview">
+        <pre id="prompt"></pre>
+      </div>
+      <button type="button" class="toggle" id="toggle" aria-expanded="false">Ver prompt completo</button>
+
+      <div class="actions">
+        <button type="button" class="btn" id="copiar">Copiar prompt</button>
+        <button type="button" class="btn ghost" id="sortear">Sortear outra pose</button>
+      </div>
+      <p class="toast" id="aviso" role="status"></p>
+      <div class="open-ai">
+        <span>Depois de copiar, abra:</span>
+        <a class="link" href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>
+        <a class="link" href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="dicas">
+    <h2 id="dicas">Para ficar a sua cara</h2>
+    <details>
+      <summary>Qual foto usar?</summary>
+      <p>Uma foto de frente, com boa luz, rosto visível e sem óculos escuros. Quanto mais nítida, mais fiel o resultado.</p>
+    </details>
+    <details>
+      <summary>O rosto saiu diferente. E agora?</summary>
+      <p>Envie o prompt de novo e acrescente no final: “photorealistic face, only the background in illustrated style”.</p>
+    </details>
+    <details>
+      <summary>Quero outra pose ou outro cenário</summary>
+      <p>Toque em “Sortear outra pose” e copie de novo. Cada sorteio muda a pose, o veículo, o clima e o detalhe extra. Gere várias e escolha a melhor.</p>
+    </details>
+    <details>
+      <summary>Postei minha capa. E agora?</summary>
+      <p>Marque @vagner_lauriuche nos stories para eu ver o seu resultado.</p>
+    </details>
+  </section>
+
+  <footer>
+    <div class="maker">
+      <span class="avatar" aria-hidden="true">V</span>
+      <div>
+        <strong>Desenvolvido por Vagner</strong>
+        <span>Desenvolvedor web</span>
+      </div>
+    </div>
+    <a class="btn ghost" href="https://www.instagram.com/vagner_lauriuche" target="_blank" rel="noopener">Seguir no Instagram</a>
+    <p class="fine">Projeto independente de fãs. Sem vínculo com a Rockstar Games ou a Take-Two. Grand Theft Auto é marca de seus respectivos donos.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  function par(pt, en) { return { pt: pt, en: en }; }
+
+  var POSES = [
+    par("mãos nos bolsos", "hands in pockets"),
+    par("braços cruzados", "arms crossed"),
+    par("apoiado em um carro", "leaning on a car"),
+    par("sentado no capô", "sitting on the hood"),
+    par("caminhando em direção à câmera", "walking toward the camera"),
+    par("olhando por cima do ombro", "looking over the shoulder"),
+    par("ajeitando os óculos escuros", "adjusting sunglasses"),
+    par("segurando o celular", "holding a phone"),
+    par("encostado em uma palmeira", "leaning against a palm tree"),
+    par("sentado em uma mureta", "sitting on a low wall")
+  ];
+  var VEICULOS = [
+    par("supercarro roxo com faróis azuis", "purple supercar with blue headlights"),
+    par("moto esportiva neon", "neon sport motorcycle"),
+    par("conversível rosa", "pink convertible"),
+    par("lancha no cais", "speedboat at the dock"),
+    par("muscle car clássico dos anos 80", "classic 80s muscle car")
+  ];
+  var CLIMAS = [
+    par("pôr do sol", "sunset"),
+    par("entardecer com chuva fina", "late afternoon with light rain"),
+    par("noite com neon forte", "night with strong neon lights"),
+    par("amanhecer rosado", "pink sunrise")
+  ];
+  var EXTRAS = [
+    par("flamingos", "flamingos"),
+    par("uma placa de neon", "a neon sign"),
+    par("fogos de artifício", "fireworks"),
+    par("pessoas ao fundo em estilo GTA", "GTA-style people in the background"),
+    par("moto-táxi", "motorcycle taxi"),
+    par("gaivotas", "seagulls")
+  ];
+
+  var FORMATOS = [
+    { id: "9-16", ratio: "9:16", nome: "9:16", uso: "Stories e Reels", orient: "vertical", w: 18, h: 32,
+      comp: "In the foreground, a full-body shot with a slight low angle (looking up at the subject), centered in the composition, with free space at the bottom for the logo and name." },
+    { id: "4-5", ratio: "4:5", nome: "4:5", uso: "Feed vertical", orient: "vertical", w: 26, h: 32,
+      comp: "In the foreground, a full-body shot with a slight low angle (looking up at the subject), centered in the composition, with free space at the bottom for the logo and name." },
+    { id: "3-4", ratio: "3:4", nome: "3:4", uso: "Feed na grade", orient: "vertical", w: 24, h: 32,
+      comp: "In the foreground, a full-body shot with a slight low angle (looking up at the subject), centered in the composition, with free space at the bottom for the logo and name." },
+    { id: "1-1", ratio: "1:1", nome: "1:1", uso: "Quadrado", orient: "square", w: 30, h: 30,
+      comp: "In the foreground, a waist-up medium shot, centered, with the logo and name clearly legible at the bottom of the image." },
+    { id: "16-9", ratio: "16:9", nome: "16:9", uso: "Horizontal", orient: "horizontal", w: 44, h: 25,
+      comp: "In the foreground, a full-body shot placed off-center following the rule of thirds, with Vice City opening up across the rest of the frame. Logo and name placed on the side opposite the subject." }
+  ];
+
+  var modo = "sorteio";
+  var formato = FORMATOS[0];
+  var escolha = {};
+
+  var $nome = document.getElementById("nome");
+  var $prompt = document.getElementById("prompt");
+  var $aviso = document.getElementById("aviso");
+  var $chips = document.getElementById("chips");
+  var $preview = document.getElementById("preview");
+  var $toggle = document.getElementById("toggle");
+  var $mSorteio = document.getElementById("modo-sorteio");
+  var $mIa = document.getElementById("modo-ia");
+  var $btnSortear = document.getElementById("sortear");
+  var $formats = document.getElementById("formats");
+  var $fmtHint = document.getElementById("fmt-hint");
+
+  function pick(lista) { return lista[Math.floor(Math.random() * lista.length)]; }
+
+  function sortear() {
+    escolha = { pose: pick(POSES), veiculo: pick(VEICULOS), clima: pick(CLIMAS), extra: pick(EXTRAS) };
+  }
+
+  function listaEn(lista) { return lista.map(function (x) { return x.en; }).join(" / "); }
+
+  function montar() {
+    var nome = $nome.value.trim() || "YOUR NAME OR NICKNAME";
+    var cena;
+    if (modo === "sorteio") {
+      cena = "SCENE AND POSE:\n" +
+        "- Pose: " + escolha.pose.en + "\n" +
+        "- Vehicle: " + escolha.veiculo.en + "\n" +
+        "- Time and weather: " + escolha.clima.en + "\n" +
+        "- Extra detail: " + escolha.extra.en + "\n" +
+        "Combine these elements naturally in the composition.";
+    } else {
+      cena = "SCENE AND POSE (RANDOMIZE EACH TIME: pick one option from each group at random):\n" +
+        "- Pose: [" + listaEn(POSES) + "]\n" +
+        "- Vehicle: [" + listaEn(VEICULOS) + "]\n" +
+        "- Time and weather: [" + listaEn(CLIMAS) + "]\n" +
+        "- Extra detail: [" + listaEn(EXTRAS) + "]\n" +
+        "Pick ONE option from each group and combine them naturally. Do not repeat the previous combination.";
+    }
+
+    return "Use the attached photo as the ABSOLUTE identity reference. Faithfully keep the face, skin tone, hair, beard (if any), proportions and confident expression of the person in the photo. They must look like the real person: no caricature, no plastic skin, no altered features.\n\n" +
+      "Create a high-quality " + formato.orient + " " + formato.ratio + " poster in the official GTA VI cover art style: semi-realistic illustration with a cinematic finish, soft ink outlines, dramatic lighting and saturated colors.\n\n" +
+      "SETTING: Vice City at sunset. Purple, pink and orange gradient sky with glowing clouds, low sun on the horizon. Tall palm trees in silhouette in the foreground, art deco buildings with pink neon and a vertical \"VICE CITY\" sign, skyline in the background, lit Ferris wheel, white yacht in the harbor, helicopter in the sky and seagulls. Wet stone pavement reflecting neon lights in pink, blue and gold.\n\n" +
+      "CHARACTER: " + formato.comp + " Outfit: palm-print Hawaiian shirt open over a black t-shirt, black cargo pants, sneakers, silver chain and silver watch. Pink and orange rim light along the edges of the body.\n\n" +
+      cena + "\n\n" +
+      "COVER TEXT:\n" +
+      "- \"Grand Theft Auto VI\" logo at the bottom, with the \"VI\" in a neon pink, purple and orange gradient with palm trees inside the letters, in the official style.\n" +
+      "- Below the logo, in white brush script lettering with a pink stroke: \"" + nome + "\".\n" +
+      "- Rockstar logo in the bottom-left corner and a neon pink \"Vice City\" signature in the bottom-right corner.\n\n" +
+      "QUALITY: 4K, sharp detail, natural skin with real texture, wet-ground reflections, cinematic depth of field, professional poster composition.\n\n" +
+      "AVOID: deformed face, face different from the photo, childish cartoon look or caricature, overly smooth skin, extra fingers, illegible text, distorted logos, watermarks, dull colors.";
+  }
+
+  function desenharChips() {
+    $chips.innerHTML = "";
+    if (modo === "sorteio") {
+      [escolha.pose, escolha.veiculo, escolha.clima, escolha.extra].forEach(function (t) {
+        var s = document.createElement("span");
+        s.className = "chip";
+        s.textContent = t.pt;
+        $chips.appendChild(s);
+      });
+    } else {
+      var p = document.createElement("p");
+      p.className = "chip-note";
+      p.textContent = "A IA escolhe pose, veículo, clima e detalhe extra a cada geração.";
+      $chips.appendChild(p);
+    }
+  }
+
+  function desenharFormatos() {
+    $formats.innerHTML = "";
+    FORMATOS.forEach(function (f) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "fmt";
+      b.setAttribute("aria-pressed", String(f.id === formato.id));
+      b.innerHTML = '<span class="shape" aria-hidden="true"><i style="width:' + f.w + 'px;height:' + f.h + 'px"></i></span>' +
+        '<b></b><small></small>';
+      b.querySelector("b").textContent = f.nome;
+      b.querySelector("small").textContent = f.uso;
+      b.addEventListener("click", function () { formato = f; atualizar(); });
+      $formats.appendChild(b);
+    });
+    $fmtHint.textContent = "Se a IA gerar em outro tamanho, peça: “redo it in " + formato.ratio + "”.";
+  }
+
+  function atualizar() {
+    desenharFormatos();
+    $prompt.textContent = montar();
+    desenharChips();
+  }
+
+  function aviso(msg) {
+    $aviso.textContent = msg;
+    clearTimeout(aviso._t);
+    aviso._t = setTimeout(function () { $aviso.textContent = ""; }, 3200);
+  }
+
+  function setModo(novo) {
+    modo = novo;
+    $mSorteio.setAttribute("aria-pressed", String(novo === "sorteio"));
+    $mIa.setAttribute("aria-pressed", String(novo === "ia"));
+    $btnSortear.style.display = novo === "sorteio" ? "" : "none";
+    atualizar();
+  }
+
+  function copiarFallback(texto) {
+    var ta = document.createElement("textarea");
+    ta.value = texto;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  var OK = "Prompt copiado. Agora cole na sua IA com a foto.";
+  var FALHA = "Não foi possível copiar. Toque em “Ver prompt completo” e copie o texto manualmente.";
+
+  document.getElementById("copiar").addEventListener("click", function () {
+    var texto = $prompt.textContent;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(texto).then(
+        function () { aviso(OK); },
+        function () { aviso(copiarFallback(texto) ? OK : FALHA); }
+      );
+    } else {
+      aviso(copiarFallback(texto) ? OK : FALHA);
+    }
+  });
+
+  $toggle.addEventListener("click", function () {
+    var aberto = $preview.classList.toggle("open");
+    $toggle.setAttribute("aria-expanded", String(aberto));
+    $toggle.textContent = aberto ? "Recolher prompt" : "Ver prompt completo";
+  });
+
+  $btnSortear.addEventListener("click", function () { sortear(); atualizar(); aviso("Nova combinação sorteada."); });
+  $mSorteio.addEventListener("click", function () { setModo("sorteio"); });
+  $mIa.addEventListener("click", function () { setModo("ia"); });
+  $nome.addEventListener("input", atualizar);
+
+  sortear();
+  setModo("sorteio");
+})();
+</script>
+</body>
+</html>
